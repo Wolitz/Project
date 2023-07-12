@@ -1,0 +1,117 @@
+WidgetExample:
+
+<WidgetExample>:
+    cols: 3
+    ToggleButton:
+        text:"OFF"
+        on_state: root.on_toggle_button_state(self)
+        size_hint: None, 1
+        width: "100dp"
+
+    Button:
+        text : "Count"
+        on_press:root.on_button_click()
+        disabled: not root.count_enbl
+    Label:
+        text:root.my_text
+        font_name: "kivy/Lcd.ttf"
+        font_size: "80dp"
+        color: 1, 0.5, 1, 1
+    Switch:
+        on_active: root.on_switch_active(self)
+        size_hint: None, 1
+        width: "100dp"
+    Slider:
+        id: my_slider
+        min: 0
+        max: 100
+        value: 50
+        #on_value: root.on_slider_value(self)
+        orientation: "vertical"
+    Label:
+        text: str(int(my_slider.value))
+        font_name: "kivy/Lcd.ttf"
+        font_size: "80dp"
+        color: 1, 0.5, 1, 1
+
+<PageLayoutExample@PageLayout>:
+    MainWidget:
+    BoxLayoutExample:
+    AnchorLayoutExample:
+    GridLayoutExample:
+
+<ScrollViewExample@ScrollView>:
+    StackLayoutExample:
+        size_hint: 1, None
+        height: self.minimum_height
+        
+        
+
+<StackLayoutExample>:
+    #padding: ("20dp", "20dp", "20dp", "20dp")
+    #spacing: "20dp","20dp"
+
+<GridLayoutExample@GridLayout>:
+    rows:2
+    
+    Button:
+        text : "A"
+        size_hint: None,1
+        width:"50dp"
+    BoxLayoutExample:
+    Button:
+        text : "C"
+    Button:
+        text : "D"
+        size_hint: None,1
+        width:"50dp"
+    Button:
+        text : "E"
+    Button:
+        text : "F"
+
+<AnchorLayoutExample>:
+    anchor_x :"center"
+    anchor_y : "top"
+    BoxLayout:
+        size_hint: 0.2,0.2
+        Button:
+            text : "A"
+        Button:
+            text : "B"
+           
+   
+
+<BoxLayoutExample>:
+    orientation : "horizontal"
+
+    Button:
+        text:"A"
+        size_hint: 0.5, 0.5
+        pos_hint: {"center_y":0.5}
+    BoxLayout:
+        orientation : "vertical"
+        spacing : "10dp"
+        Button:
+            text: "B1"
+        Button:
+            text: "B2"
+        Button:
+            text: "B3"
+        Button:
+            text: "B4"
+    Label:
+        text:"C"
+
+
+<MainWidget>:
+    Button:
+        text:"Hello"
+        size: "100dp", "80dp"
+        pos: "100dp", "200dp"
+    Label:
+        text:"Hello"
+        size: "100dp", "80dp"
+        pos: "200dp", "300dp"
+        color: 125,1,1,1
+    
